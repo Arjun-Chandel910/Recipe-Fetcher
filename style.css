@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body {
   font-family: cursive;
 }
@@ -11,14 +16,16 @@ body {
 }
 
 .cards {
+  background: white;
   width: 350px;
   height: 300px;
   margin: 10px;
   border: 3px pink solid;
   border-radius: 16px;
-  transition: 0.4s;
+  transition: 0.2s;
 }
 .cards:hover {
+  z-index: 1.5;
   transform: scale(1.05);
   box-shadow: 8px 8px 12px grey;
 }
@@ -30,7 +37,15 @@ p {
 .beforeRes {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
+.noimg {
+  height: 300px;
+  width: 300px;
+  border-radius: 16px;
+}
+
 input {
   color: #990465 !important;
 }
@@ -61,6 +76,60 @@ button {
   transition: 0.2s;
 }
 button:hover {
+  transform: scale(1.02);
+  box-shadow: 3px 3px 10px grey;
+}
+
+.recipeCard {
+  background: white;
+  padding: 2px;
+  scrollbar-color: black;
+  position: fixed;
+  left: 37%;
+  top: 17%;
+  margin: auto;
+  width: 350px;
+  height: 300px;
+  border: 3px grey solid;
+  border-radius: 10px;
+  transition: 0.2s;
+  overflow: scroll;
+}
+
+@media (max-width: 550px) {
+  .recipeCard {
+    width: 200px;
+    height: 200px;
+    left: 18%;
+    top: 18%;
+  }
+}
+.recipeCard:hover {
   transform: scale(1.05);
-  box-shadow: 4px 4px 10px grey;
+  box-shadow: 3px 3px 10px grey;
+}
+
+.recipeCard::-webkit-scrollbar {
+  margin: 10px;
+  width: 15px;
+  height: 4px;
+}
+
+.recipeCard::-webkit-scrollbar-thumb {
+  width: inherit;
+
+  border-radius: 20px;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, #fd3db5, #fd3db5, #ff8da1);
+}
+
+.dis {
+  display: none;
+}
+
+.cross {
+  position: absolute;
+  right: 1px;
+  margin: 1px;
+  color: #990465;
 }
